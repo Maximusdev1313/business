@@ -15,7 +15,32 @@
     </q-header>
 
     <q-drawer  v-model="rightDrawerOpen" side="right" bordered>
-      <!-- drawer content -->
+      <q-scroll-area class="fit">
+          <q-list padding class="menu-list">
+            <q-item clickable v-ripple to="/">
+              <q-item-section avatar>
+                <q-icon name="inbox" />
+              </q-item-section>
+
+              <q-item-section>
+                Home
+              </q-item-section>
+            </q-item>
+
+            <q-item active clickable v-ripple to="plan">
+              <q-item-section avatar>
+                <q-icon name="star" />
+              </q-item-section>
+
+              <q-item-section>
+                Plan
+              </q-item-section>
+            </q-item>
+
+            
+          </q-list>
+        </q-scroll-area>
+
     </q-drawer>
 
     <q-page-container>
@@ -52,3 +77,7 @@ export default {
   }
 }
 </script>
+<style lang="sass" scoped>
+.menu-list .q-item
+  border-radius: 0 32px 32px 0
+</style>
