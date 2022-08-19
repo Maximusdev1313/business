@@ -1,7 +1,7 @@
 <template>
-  <q-layout view="hHh lpR fff">
+  <q-layout  view="hHh lpR fff" class="dark">
 
-    <q-header bordered class="bg-primary text-white">
+    <q-header reveal elevated class="bg-primary text-white">
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar>
@@ -9,8 +9,14 @@
           </q-avatar>
           Title
         </q-toolbar-title>
+
+        <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />
       </q-toolbar>
     </q-header>
+
+    <q-drawer  v-model="rightDrawerOpen" side="right" bordered>
+      <!-- drawer content -->
+    </q-drawer>
 
     <q-page-container>
       <router-view />
@@ -31,9 +37,18 @@
 </template>
 
 <script>
+import { ref } from 'vue'
 
+export default {
+  setup () {
+    const rightDrawerOpen = ref(false)
+
+    return {
+      rightDrawerOpen,
+      toggleRightDrawer () {
+        rightDrawerOpen.value = !rightDrawerOpen.value
+      }
+    }
+  }
+}
 </script>
-
-<style>
-
-</style>
