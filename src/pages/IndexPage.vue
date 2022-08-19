@@ -9,6 +9,7 @@
   </div>
 </template>
 <script>
+
 import CompHome from 'src/components/forMainPage/CompHome';
 import CompAbout from 'src/components/forMainPage/CompAbout';
 import CompService from 'src/components/forMainPage/CompService';
